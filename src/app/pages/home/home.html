@@ -2,7 +2,7 @@
     <app-loader />
 } @else {
     <div>
-        <input #pokemonInput>
+        <input #pokemonInput (keydown.enter)="appService.pokemonName.set(pokemonInput.value)">
         <button (click)="appService.pokemonName.set(pokemonInput.value)">Charger un autre pokemon</button>
     </div>
     <p>
