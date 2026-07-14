@@ -1,3 +1,8 @@
-<p>Nom: {{appService.pokemon.value()?.name}}</p>
-<p>Poids: {{appService.pokemon.value()?.weight}}</p>
-<p>Taille: {{appService.pokemon.value()?.height}}</p>
+@if(appService.pokemon.isLoading()) {
+    <app-loader />
+} @else {
+    <p>Nom: {{appService.pokemon.value()!.name}}</p>
+    <p>Poids: {{appService.pokemon.value()!.weight}}</p>
+    <p>Taille: {{appService.pokemon.value()!.height}}</p>
+}
+

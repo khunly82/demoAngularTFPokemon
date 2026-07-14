@@ -1,4 +1,8 @@
-<p>
-    <img [src]="appService.pokemon.value()?.sprites.front_default" alt="">
-</p>
+@if(appService.pokemon.isLoading()) {
+    <app-loader></app-loader>
+} @else {
+    <p>
+        <img [src]="appService.pokemon.value()!.sprites.back_default" alt="">
+    </p>
+}
 
